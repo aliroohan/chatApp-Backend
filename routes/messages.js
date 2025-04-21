@@ -8,7 +8,7 @@ const auth = require('../middleware/auth');
 router.get('/:roomId', auth, async (req, res) => {
   try {
     const messages = await Message.find({ room: req.params.roomId })
-      .populate('sender', 'username avatar')
+      .populate('sender', 'username')
       .sort({ createdAt: 1 });
 
     res.json(messages);
