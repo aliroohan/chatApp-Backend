@@ -21,13 +21,12 @@ router.get('/:roomId', auth, async (req, res) => {
 // Create a new room
 router.post('/room', async (req, res) => {
   try {
-    const { name, participants } = req.body;
+    const { name } = req.body;
 
 
     // Create new room
     const newRoom = new Room({
-      name,
-      participants,
+      name
 
     });
 
