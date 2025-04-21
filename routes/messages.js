@@ -32,9 +32,6 @@ router.post('/room', async (req, res) => {
 
     await newRoom.save();
 
-    // Populate participants info
-    await newRoom.populate('participants', 'username avatar');
-
     res.status(201).json(newRoom);
   } catch (error) {
     console.error(error);
