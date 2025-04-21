@@ -65,7 +65,7 @@ router.post('/', auth, async (req, res) => {
     await room.save();
 
     // Populate sender info
-    await newMessage.populate('sender', 'username avatar');
+    await newMessage.populate('sender', 'username');
 
     res.status(201).json(newMessage);
   } catch (error) {
